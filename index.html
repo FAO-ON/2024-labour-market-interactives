@@ -20,7 +20,7 @@
   }
 	.labour-market-chart {
 		font-family: Helvetica, Arial;
-		font-size: 14px;
+		font-size: 1rem;
 		overflow: visible;
 		margin: 0;
 		margin-bottom: 20px;
@@ -31,7 +31,7 @@
   }
 
   .labour-market-chart text{
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
 
@@ -58,17 +58,17 @@
 
 	/* y axis */
 	.labour-market-chart g[aria-label="y-axis label"] text{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: Helvetica, Arial;
     
 	}
 
   #observablehq-fig1_plot-8deb58ae > svg > g[aria-label="y-axis label"] > text{
-    transform: translateY(400px) rotate(-90deg);
+    transform: translate(28px, 390px) rotate(270deg);
   }
 
   #observablehq-fig1_plot-8deb58ae > svg > svg > g[aria-label="y-axis label"] > text{
-    transform: translate(1315px, 375px) rotate(90deg);
+    transform: translate(999px, 375px) rotate(90deg);
   }
 
   .labour-market-chart g[aria-label="y-axis tick"]{
@@ -101,7 +101,7 @@
   }
 
 	.labour-market-chart g[aria-label="tip"] text{
-		font-size: 1.2rem;
+		font-size: 1rem;
 		font-family: Helvetica, Arial;
 	}
 
@@ -150,7 +150,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
     <script type="module">
       import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-      import define from "https://api.observablehq.com/d/4e0c051d288983ff@175.js?v=4";
+      import define from "https://api.observablehq.com/d/4e0c051d288983ff@181.js?v=4";
       new Runtime().module(define, name => {
         if (name === "viewof filtered2") return new Inspector(document.querySelector("#observablehq-viewof-filtered2-8deb58ae"));
         if (name === "fig1_plot") return new Inspector(document.querySelector("#observablehq-fig1_plot-8deb58ae"));
