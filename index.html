@@ -15,7 +15,10 @@
 	/* OP charts */
 
 	/* figure container */
-	.labour-market-chart-figure {
+  .labour-market-chart line{
+    display: none;
+  }
+	.labour-market-chart {
 		font-family: Helvetica, Arial;
 		font-size: 14px;
 		overflow: visible;
@@ -23,9 +26,15 @@
 		margin-bottom: 20px;
 	}
 
-  .labour-market-chart text{
-    font-size: 14px;
+  .labour-market-chart g[aria-label="x-axis tick"]{
+    display:none;
   }
+
+  .labour-market-chart text{
+    font-size: 1.2rem;
+  }
+
+
 
 	/* legend container */
 	.labour-market-chart-swatches,
@@ -34,6 +43,10 @@
 		font-family: Helvetica, Arial;
 		justify-content: center;
 	}
+
+  #observablehq-viewof-filtered2-8deb58ae > div{
+    justify-content: center;
+  }
 
 	/* legend entries */
 	.fig-legend-swatch{
@@ -45,26 +58,35 @@
 
 	/* y axis */
 	.labour-market-chart g[aria-label="y-axis label"] text{
-		font-size: 14px;
+    font-size: 1.2rem;
     font-family: Helvetica, Arial;
-    transform: translate(48px, 250px) rotate(-90deg);
+    
 	}
 
+  #observablehq-fig1_plot-8deb58ae > svg > g[aria-label="y-axis label"] > text{
+    transform: translateY(400px) rotate(-90deg);
+  }
+
+  #observablehq-fig1_plot-8deb58ae > svg > svg > g[aria-label="y-axis label"] > text{
+    transform: translate(1315px, 375px) rotate(90deg);
+  }
+
   .labour-market-chart g[aria-label="y-axis tick"]{
-    display: none
+    display: none;
   }
 
 	/* x axis */
+ 
+
 	.labour-market-chart g[aria-label="x-axis label"] text{
-		font-size: 14px;
-		transform: translate(410px, 435px);
+		font-size: 1.2rem;
+		
 	}
 
-  .labour-market-chart g[aria-label="x-axis tick label"] :is(text){
+  .labour-market-chart  g[aria-label="x-axis tick label"] :is(text){
     /*rotate the x axis label 90 degrees*/
-    writing-mode: vertical-lr;
     /*move down the x axis label*/
-    margin-top: 20px;
+
   }
 
   .labour-market-chart g[aria-label="text"]{
@@ -79,7 +101,7 @@
   }
 
 	.labour-market-chart g[aria-label="tip"] text{
-		font-size: 14px;
+		font-size: 1.2rem;
 		font-family: Helvetica, Arial;
 	}
 
@@ -102,6 +124,7 @@
 
   .labour-market-chart g[aria-label="x-axis tick label"]{
     transform: translateY(30px);
+    display: none;
   }
   /* bold the first line in the tooltip */
   .labour-market-chart [aria-label="tip"] tspan:nth-child(1) {
@@ -111,16 +134,30 @@
   </style>
   <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
   <script src="https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6"></script>
-  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-  <script type="module" src="labour-market.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.js" integrity="sha512-NmSTfudjn1FCaFMQ+f4xveBmwRJn5ep8Wu+YOeq+CeExhFtKvwhfKVXFX3tGxoGWxu8Fl83qm9nE8/Hkc1dWZg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--<script type="module" src="labour-market.js"></script>-->
+  <script defer>
+   
+  </script>
 </head>
 <body>
   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas est dolorem repudiandae molestias accusantium maxime modi magnam reiciendis! Debitis autem, earum sed esse possimus soluta reprehenderit ea aliquid animi dolor!</p>
   <div class="report-chart" id="fig1-image">
-    <p class="title"><span>Figure 1</span> Testing</p>
-    <img src="/web/default/files/publications/FA2207%20School%20Board%20Funding/fig9.png" style="width: 100%; max-width: 100%;" />
+    <p class="title"><span>Figure 1: </br>Ontario gained 183,200 jobs in 2023</span></p>
+    <div id="observablehq-viewof-filtered2-8deb58ae"></div>
+    <div id="observablehq-fig1_plot-8deb58ae"></div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+    <script type="module">
+      import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+      import define from "https://api.observablehq.com/d/4e0c051d288983ff@175.js?v=4";
+      new Runtime().module(define, name => {
+        if (name === "viewof filtered2") return new Inspector(document.querySelector("#observablehq-viewof-filtered2-8deb58ae"));
+        if (name === "fig1_plot") return new Inspector(document.querySelector("#observablehq-fig1_plot-8deb58ae"));
+      });
+    </script>
     <p class="source">Source: FAO analysis of information provided by the Province.</p>
-    <p class="alt-text-link"><a href="#fig4_1">Accessible version</a></p>
+    <p class="alt-text-link"><a href="#fig1">Accessible version</a></p>
   </div>
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dicta voluptatibus magni facere iste mollitia aut, explicabo eos. Fuga, laboriosam. Est facilis sunt atque! Culpa distinctio deleniti dolor labore possimus.</p>
 </body>
